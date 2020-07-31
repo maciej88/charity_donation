@@ -1,0 +1,9 @@
+/app/migrations/
+/db.sqlite3
+/venv/
+/manage.py
+/app/static/__init__.py
+/app/templates/__init__.py
+/app/__init__.py
+/charity_donation/__init__.py
+/.idea/

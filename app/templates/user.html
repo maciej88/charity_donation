@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="login-page">
+        <h2>Twoje dane:</h2>
+        <div class="steps--container">
+            <div class="steps--item">
+                <h3>Imię:</h3>
+                <p>{{ user.first_name }}</p>
+            </div>
+            <div class="steps--item">
+                <h3>Nazwisko:</h3>
+                <p>{{ user.last_name }}</p>
+            </div>
+            <div class="steps--item">
+                <h3>Email:</h3>
+                <p>{{ user.email }}</p>
+            </div>
+            <div class="steps--item">
+                <h3>Data rejstracji:</h3>
+                <p>{{ user.date_joined|date:"d / n / Y" }}</p>
+            </div>
+        </div>
+        <div class="form-group form-group--buttons">
+                <a class="btn" href="{% url 'update' %}">Zmień dane</a>
+            </div>
+        </section>
+
+    <section id="donations">
+        <h2>Przekazane dary</h2>
+
+
+        <div class="steps--container">
+            {% for donation in donations %}
+                <div class="steps--item"class="steps--item2">
+                    <span class="icon icon--hands"></span>
+                    <h3>Liczba przekazanych worków</h3>
+                    <p>{{ donation.quantity }}</p>
+                </div>
+                <div class="steps--item">
+                    <span class="icon icon--arrow"></span>
+                    <h3>Organizacja, której przekazano zbiórkę</h3>
+                    <p>{{ donation.institution }}</p>
+                </div>
+                <div class="steps--item">
+                    <span class="icon icon--glasses"></span>
+                    <h3>Rodzaj rzeczy</h3>
+                    <p>{% for category in donation.categories.all %}{{ category.name }}<br>{% endfor %}</p>
+                </div>
+                <div class="steps--item">
+                    <span class="icon icon--courier"></span>
+                    <h3>Data odbioru</h3>
+                    <p>{{ donation.pick_up_date|date:"d / n / Y" }}</p>
+                </div>
+                <br>
+            {% endfor %}
+        </div>
+
+    </section>
+
+{% endblock %}
