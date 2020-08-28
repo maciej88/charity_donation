@@ -10,7 +10,7 @@ from .models import *
 from .forms import *
 
 UserModel = get_user_model()
-# Create your views here.
+
 class UserLogin(View):
     def get(self, request):
         form = UserLoginForm()
@@ -24,13 +24,12 @@ class UserLogin(View):
             user_check  = User.objects.filter(email=email)
             if user is not None:
                 login(request, user)
-                #return redirect('/')
             elif not user_check:
                 return redirect(reverse('register'))
             else:
                 msg = 'Login lub hasło są niepoprawne'
                 return render(request, 'login.html', {"form": form, "msg": msg})
-            # informacja o błędzie
+            # error information
             return redirect('/')
 
 class UserLogout(View):
@@ -143,18 +142,3 @@ def get_institution_by_category(request):
 class ConfirmationView(View):
     def get(self, request):
         return render(request, 'form-confirmation.html')
-
-
-"""Developer toys:"""
-
-class AddCategory(CreateView):
-    form_class = CategoryForm
-    model = Category
-    template_name = 'category_add.html'
-    success_url = '/'
-
-class AddInstitution(CreateView):
-    form_class = InstitutionForm
-    model = Institution
-    template_name = 'institution_add.html'
-    success_url = '/'
