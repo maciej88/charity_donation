@@ -28,7 +28,5 @@ urlpatterns = [
     path('confirmation/',  login_required(ConfirmationView.as_view()), name='confirmation'),
     path('user/<int:user_id>/', UserDetails.as_view(), name='user-details'),
     path('user/edit/',  login_required(UserUpdate.as_view()), name='update'),
-    path('category-add/', AddCategory.as_view()),
     path('get_institution_by_category/', get_institution_by_category, name='get_institution_by_category'),
-    path('institution-add/', AddInstitution.as_view()),
 ]

@@ -77,16 +77,3 @@ class UserUpdateForm(forms.ModelForm):
         self.fields["first_name"].label = False
         self.fields["last_name"].label = False
         self.fields["email"].label = False
-
-"""Developer toys:"""
-
-class CategoryForm(forms.ModelForm):
-    class Meta:
-        model = Category
-        fields = '__all__'
-
-
-class InstitutionForm(forms.ModelForm):
-    class Meta:
-        model = Institution
-        fields = '__all__'
