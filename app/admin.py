@@ -4,7 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 from app.models import Category, Institution, Donation
 from .models import User
 
-
+#creating login as email (part of it in models.py):
 @admin.register(User)
 class UserAdmin(DjangoUserAdmin):
     fieldsets = (
