@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views import View
 from django.views.generic import CreateView, UpdateView
+from django.core.paginator import Paginator
 
 from .models import *
 from .forms import *
@@ -93,6 +94,10 @@ class MainPage(View):
                'locals': locals, 'quantity_of_donations': quantity_of_donations,
                'quantity_of_organizations': len(quantity_of_organizations)}
         return render(request, 'index.html', ctx)
+
+    def listing(request):
+        pass
+
 
 #donation adding
 class AddDonation(View):
