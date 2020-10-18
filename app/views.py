@@ -95,8 +95,9 @@ class MainPage(View):
                'quantity_of_organizations': len(quantity_of_organizations)}
         return render(request, 'index.html', ctx)
 
-    def listing(request):
+    def institution_pagination(request):
         pass
+
 
 
 #donation adding
