@@ -1,6 +1,4 @@
-asgiref
-Django
-pkg-resources
+django
 psycopg2-binary
 pytz
-sqlparse
+
