@@ -8,6 +8,8 @@ Otrzymałem layout strony, który musiałem dostosować do odpowiednich potrzeb 
 - administrator posiada swój panel do zarzaddzania stroną oraz jej elementami (użytkownicy i instutucje),
 - napisanie systemu logowania (email jako login - skożystałem z: https://www.fomfus.com/articles/how-to-use-email-as-username-for-django-authentication-removing-the-username),
 - odpowiednie zabezpieczenie aby użytkownk nie zalogowany nie mógł namieszać :)
+- projekt wykonywany był w sprincie z wykorzytaniem tablicy trello.
+
 
 W przyszłości planuje wrzucić stronę na serwer, oraz dodać kilka innych ważnych funkcji:
 - edytowanie profilu użytkownika oraz weryfikacja nowego urzytkownika poprzez wysyłanie potwierdzenia e-mail (aktywacja z tokenu),
@@ -15,4 +17,15 @@ W przyszłości planuje wrzucić stronę na serwer, oraz dodać kilka innych wa�
 - wprowadzenie możliwości archiwizacji przekazanych darów.
 
 zachęcam do zapoznania sie ze stroną, jestem otwarty na uwagi :)
+
+Przykładoe screeny z projektu:
+Strona startowa:
+
+
+Wykorzystanie JavaScript:
+
+
+Sprint:
+
+
 
