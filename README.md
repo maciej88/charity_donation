@@ -22,8 +22,16 @@ Przykładoe screeny z projektu:
 Strona startowa:
 
 
+
+            main.png
+          
+
 Wykorzystanie JavaScript:
 
+
+
+            java.png
+          
 
 Sprint:
 
