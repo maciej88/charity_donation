@@ -20,7 +20,10 @@ zachęcam do zapoznania sie ze stroną, jestem otwarty na uwagi :)
 
 Przykładoe screeny z projektu:
 Strona startowa:
-          
+![](images/main.jpg)
+
 Wykorzystanie JavaScript:
+![](images/java.jpg)
 
 Sprint:
+![](images/trello.jpg)
