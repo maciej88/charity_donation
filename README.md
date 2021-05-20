@@ -21,19 +21,6 @@ zachęcam do zapoznania sie ze stroną, jestem otwarty na uwagi :)
 Przykładoe screeny z projektu:
 Strona startowa:
           
-
 Wykorzystanie JavaScript:
-          
-
-
-            java.jpg
-          
-
-
-            java.jpg
-          
 
 Sprint:
-
-
-
