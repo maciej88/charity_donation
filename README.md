@@ -20,17 +20,17 @@ zachęcam do zapoznania sie ze stroną, jestem otwarty na uwagi :)
 
 Przykładoe screeny z projektu:
 Strona startowa:
-
-
-
-            main.png
           
 
 Wykorzystanie JavaScript:
+          
 
 
+            java.jpg
+          
 
-            java.png
+
+            java.jpg
           
 
 Sprint:
