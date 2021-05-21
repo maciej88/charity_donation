@@ -32,6 +32,9 @@ class UserLogin(View):
                 return render(request, 'login.html', {"form": form, "msg": msg})
             # error information
             return redirect('/')
+        else:
+            msg = 'Login lub hasło są niepoprawne'
+            return render(request, 'login.html', {"form": form, "msg": msg})
 
 class UserLogout(View):
     def get(self, request):
