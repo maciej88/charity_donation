@@ -29,4 +29,5 @@ urlpatterns = [
     path('user/<int:user_id>/', UserDetails.as_view(), name='user-details'),
     path('user/edit/',  login_required(UserUpdate.as_view()), name='user-update'),
     path('get_institution_by_category/', get_institution_by_category, name='get_institution_by_category'),
+    path('rest/', InstitutionList.as_view()),
 ]

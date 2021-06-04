@@ -1,7 +1,7 @@
 from .models import Institution
 from rest_framework import serializers
 
-class InstitutionSerializer(serializers.HyperlinkedModelSerializer):
+class InstitutionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Institution
-        fields = ("name", "description", "type", "categories")
+        fields = ("id", "name", "description", "type", "categories")
