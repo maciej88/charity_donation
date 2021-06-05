@@ -27,3 +27,6 @@ Wykorzystanie JavaScript:
 
 Sprint:
 ![](images/trello.jpg)
+
+Rest:
+![](images/Rest.jpg)
