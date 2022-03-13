@@ -24,9 +24,9 @@
                         <li><a href="{% url 'user-details' user_id=user.id %}">Profil</a></li>
                         <li><a href="{% url 'user-update' %}">Ustawienia</a></li>
                         <li><a href="{% url 'logout' %}">Wyloguj</a></li>
-                        {% if user.is_staff %}
-                            <li><a href="{% url 'admin' %}">Panel Administartora</a>
-                        {% endif %}
+{#                        {% if user.is_staff %}#}
+{#                            <li><a href="{% url '/admin/' %}">Panel Administartora</a>#}
+{#                        {% endif %}#}
                     </ul>
                 </li>
             </ul>
