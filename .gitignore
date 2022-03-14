@@ -1,6 +1,5 @@
 /app/migrations/
 /db.sqlite3
-/venv/
 /app/static/__init__.py
 /app/templates/__init__.py
 /app/__init__.py
