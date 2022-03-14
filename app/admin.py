@@ -4,7 +4,8 @@ from django.utils.translation import gettext_lazy as _
 from app.models import Category, Institution, Donation
 from .models import User
 
-#creating login as email (part of it in models.py):
+
+# creating login as email (part of it in models.py):
 @admin.register(User)
 class UserAdmin(DjangoUserAdmin):
     fieldsets = (
@@ -22,9 +23,10 @@ class UserAdmin(DjangoUserAdmin):
     )
     list_display = ('email', 'first_name', 'last_name', 'is_staff')
     search_fields = ('email', 'first_name', 'last_name')
-    ordering = ('email', ) #It must be an TUPLE OR LIST!
+    ordering = ('email',)  # It must be an TUPLE OR LIST!
 
-#Admin tools config:
+
+# Admin tools config:
 admin.site.register(Category)
 admin.site.register(Institution)
 admin.site.register(Donation)

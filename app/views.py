@@ -6,7 +6,6 @@ from django.urls import reverse
 from django.views import View
 from django.views.generic import UpdateView
 
-
 from .serializers import InstitutionSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -18,17 +17,19 @@ from .forms import *
 
 UserModel = get_user_model()
 
+
 class UserLogin(View):
     def get(self, request):
         form = UserLoginForm()
         return render(request, 'login.html', {"form": form})
+
     def post(self, request):
         form = UserLoginForm(request.POST)
         if form.is_valid():
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
             user = authenticate(email=email, password=password)
-            user_check  = User.objects.filter(email=email)
+            user_check = User.objects.filter(email=email)
             if user is not None:
                 login(request, user)
             elif not user_check:
@@ -42,15 +43,18 @@ class UserLogin(View):
             msg = 'Login lub hasło są niepoprawne'
             return render(request, 'login.html', {"form": form, "msg": msg})
 
+
 class UserLogout(View):
     def get(self, request):
         logout(request)
         return redirect('/')
 
+
 class UserAdd(View):
     def get(self, request):
         form = UserAddForm()
         return render(request, 'register.html', {'form': form})
+
     def post(self, request):
         form = UserAddForm(request.POST)
         if form.is_valid():
@@ -65,7 +69,6 @@ class UserAdd(View):
             return render(request, 'register.html', {'form': form})
 
 
-
 class UserDetails(LoginRequiredMixin, View):
     def get(self, request, user_id):
         user_info = User.objects.get(id=user_id)
@@ -76,6 +79,7 @@ class UserDetails(LoginRequiredMixin, View):
         }
         return render(request, 'user.html', ctx)
 
+
 class UserUpdate(UpdateView):
     model = User
     fields = ['first_name', 'last_name', 'email']
@@ -85,13 +89,12 @@ class UserUpdate(UpdateView):
         return self.request.user
 
 
-
-#Landing page View:
+# Landing page View:
 class MainPage(View):
     def get(self, request):
         donations = Donation.objects.all()
-        quantity_of_donations = 0 #number of donated bags
-        quantity_of_organizations = [] #list of organizations - len il summary whole list
+        quantity_of_donations = 0  # number of donated bags
+        quantity_of_organizations = []  # list of organizations - len il summary whole list
         fundations = Institution.objects.filter(type=1)
         organizations = Institution.objects.filter(type=2)
         locals = Institution.objects.filter(type=3)
@@ -108,13 +111,12 @@ class MainPage(View):
         pass
 
 
-
-#donation adding
+# donation adding
 class AddDonation(View):
     def get(self, request):
         categories = Category.objects.all()
         institutions = Institution.objects.all()
-        return render(request, 'form.html', {'categories':categories, "institutions": institutions})
+        return render(request, 'form.html', {'categories': categories, "institutions": institutions})
 
     def post(self, request):
         user = request.user
@@ -143,6 +145,7 @@ class AddDonation(View):
         donation.categories.set(categories)
         return render(request, 'form-confirmation.html')
 
+
 def get_institution_by_category(request):
     category_id = request.GET.getlist('category_id')
     if category_id is not None:
@@ -154,11 +157,13 @@ def get_institution_by_category(request):
         institutions = Institution.objects.all()
     return render(request, "api_institutions.html", {'institutions': institutions})
 
+
 class ConfirmationView(View):
     def get(self, request):
         return render(request, 'form-confirmation.html')
 
-#REST Framework:
+
+# REST Framework:
 class InstitutionList(APIView):
 
     def get(self, request, format=None):
