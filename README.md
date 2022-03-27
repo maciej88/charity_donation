@@ -1,6 +1,8 @@
 # charity_donation
 Demonstracja umiejętności back-end.
 
+Update dla wersji Python 3.8 oraz Django 4.0
+
 Otrzymałem layout strony, który musiałem dostosować do odpowiednich potrzeb w back-end:
 - odpowiednie skonfigurowanie projektu pod Python/ Django, Javascript (korzystanie ze źródeł 'static'),
 - przygotowanie bazy danych - wykorzystanie PostgreSQL, SQL i napisanie modeli w python/django,
@@ -30,3 +32,4 @@ Sprint:
 
 Rest:
 ![](images/Rest.jpg)
+
