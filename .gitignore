@@ -3,7 +3,9 @@
 /app/static/__init__.py
 /app/templates/__init__.py
 /app/__init__.py
+/app/__pycache__/
 /charity_donation/__init__.py
+/charity_donation/__pycache__/
 /.idea/
 venv/char_env/
 /venv/
