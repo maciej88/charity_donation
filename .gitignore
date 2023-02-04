@@ -5,4 +5,5 @@
 /app/__init__.py
 /charity_donation/__init__.py
 /.idea/
-/char_env/
+venv/char_env/
+/venv/
