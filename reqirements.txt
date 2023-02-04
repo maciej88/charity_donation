@@ -1,6 +1,5 @@
 asgiref
 Django
-pkg-resources
 psycopg2-binary
 pytz
 sqlparse
