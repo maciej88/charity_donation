@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from decouple import config
+from decouple import config, Csv 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -19,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'm-p-m-i9-xu5&rmrxcz#e1%bkv%g5&+cr#is&gowxc_1m4jl2e'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -74,11 +76,11 @@ WSGI_APPLICATION = 'charity_donation.wsgi.application'
 
 DATABASES = {
     'default': {
-        'HOST': '127.0.0.1',
+        'HOST': config('DB_HOST'),
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'charity-donation',
-        'USER': 'postgres',
-        'PASSWORD': 'coderslab',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
     }
 }
 
