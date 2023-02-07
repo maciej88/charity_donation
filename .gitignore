@@ -9,3 +9,4 @@
 /.idea/
 venv/char_env/
 /venv/
+/charity_donation/.env
