@@ -3,3 +3,5 @@ Django
 psycopg2-binary
 pytz
 sqlparse
+djangorestframework
+django-filter
